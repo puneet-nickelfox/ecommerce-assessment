@@ -1,0 +1,7 @@
+const TYPES = {
+  CURRENCY_TYPE:"CURRENCY_TYPE",
+  PRODUCT_LIST:"PRODUCT_LIST"
+};
+
+
+export default TYPES;
