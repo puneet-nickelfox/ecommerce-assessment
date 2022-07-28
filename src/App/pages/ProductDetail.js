@@ -11,17 +11,30 @@ const useStyles = makeStyles({
     marginBottom: "100px",
     maxWidth: "1000px",
     padding: "0 100px",
+    ['@media (max-width:800px)']: { // eslint-disable-line no-useless-computed-key
+      alignItems: "center",
+      flexDirection: "column-reverse",
+      marginBottom: "200px",
+      padding: "0 50px",
+    }
   },
   productText: {
     minWidth: "50%",
     paddingRight: 20,
     textAlign: " left",
+    ['@media (max-width:800px)']: { // eslint-disable-line no-useless-computed-key
+      paddingRight: 0,
+    }
   },
   productImage: {
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
     minWidth: "50%",
+    ['@media (max-width:800px)']: { // eslint-disable-line no-useless-computed-key
+      maxWidth: 300,
+      minWidth: 200,
+    }
   },
   productTitle: {
     alignItems: "flex-start",
