@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Select } from "@material-ui/core";
-import {connect} from 'react-redux';
-import {updateCurrency} from '../../redux/actions/ecommerceActions'
-
+import { connect } from "react-redux";
+import { updateCurrency } from "../../redux/actions/ecommerceActions";
 
 const useStyles = makeStyles({
   footer: {
@@ -26,28 +24,15 @@ const useStyles = makeStyles({
 function Footer(props) {
   const classes = useStyles();
 
-  const handleChange=(e)=>{
-    props.updateCurrency(e.target.value)
-  }
+  const handleChange = (e) => {
+    props.updateCurrency(e.target.value);
+  };
   return (
     <div className={classes.footer}>
       <p className={classes.trademark}>© 2022 DemoStore</p>
-      {/* <p>
-        To complete checkout on Ablr's staging environment, refer to our{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://docs.ablr.com/docs/ablr/docs/Test-Credentials.md"
-        >
-          Test Credentials
-        </a>{" "}
-        documentation.
-      </p> */}
-
-      <select onChange={(e)=>handleChange(e)}>
-      <option value="SG">Singapore</option>
+      <select onChange={(e) => handleChange(e)}>
+        <option value="SG">Singapore</option>
         <option value="MY">Malaysia</option>
-       
       </select>
     </div>
   );
@@ -55,8 +40,6 @@ function Footer(props) {
 
 const mapDispatchToProps = (dispatch) => ({
   updateCurrency: (data) => dispatch(updateCurrency(data)),
-
- 
 });
 
 export default connect(null, mapDispatchToProps)(Footer);

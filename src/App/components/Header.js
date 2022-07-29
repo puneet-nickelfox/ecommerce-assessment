@@ -4,27 +4,25 @@ import MenuIcon from "@material-ui/icons/Menu";
 import DemoStore from "../assets/logo/demo-store.png";
 
 const useStyles = makeStyles({
-  root: (props) => ({
+  root: () => ({
     height: 70,
     width: "100%",
     backgroundColor: "white",
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    position:"relative"
+    position: "relative",
   }),
   contentHeader: {
-    position:"relative",
-      display:"flex",
-      justifyContent:"center",
-      alignItems:"center",
-      width:"100%",
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
   logo: {
-   
     width: 96,
     height: 40,
-  
   },
 });
 function Header() {
@@ -35,8 +33,8 @@ function Header() {
         <MenuIcon />
       </div>
       <div className={classes.contentHeader}>
-          <div>
-        <img className={classes.logo} src={DemoStore} alt="storeicon" />
+        <div>
+          <img className={classes.logo} src={DemoStore} alt="storeicon" />
         </div>
       </div>
     </div>

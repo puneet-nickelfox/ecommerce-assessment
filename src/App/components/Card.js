@@ -1,7 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
-import Image1 from "../assets/images/01.jpg";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -44,7 +43,7 @@ const useStyles = makeStyles({
 function Card(props) {
   const classes = useStyles();
   const { currentCurrency, data } = props;
-  const history= useHistory()
+  const history = useHistory();
 
   const handleClick = (id) => {
     history.push(`/productdetail?id=${id}`);

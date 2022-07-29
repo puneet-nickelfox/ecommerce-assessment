@@ -7,8 +7,7 @@ import Axios from "axios";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 const SDG_CODE = process.env.REACT_APP_SDG_CODE;
-const MYR_CODE = process.env.REACT_APP_MYR_CODE
-
+const MYR_CODE = process.env.REACT_APP_MYR_CODE;
 
 const useStyles = makeStyles({
   productPageContainer: {
@@ -16,30 +15,33 @@ const useStyles = makeStyles({
     marginBottom: "100px",
     maxWidth: "1000px",
     padding: "0 100px",
-    ['@media (max-width:800px)']: { // eslint-disable-line no-useless-computed-key
+    ["@media (max-width:800px)"]: {
+      // eslint-disable-line no-useless-computed-key
       alignItems: "center",
       flexDirection: "column-reverse",
       marginBottom: "200px",
       padding: "0 50px",
-    }
+    },
   },
   productText: {
     minWidth: "50%",
     paddingRight: 20,
     textAlign: " left",
-    ['@media (max-width:800px)']: { // eslint-disable-line no-useless-computed-key
+    ["@media (max-width:800px)"]: {
+      // eslint-disable-line no-useless-computed-key
       paddingRight: 0,
-    }
+    },
   },
   productImage: {
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
     minWidth: "50%",
-    ['@media (max-width:800px)']: { // eslint-disable-line no-useless-computed-key
+    ["@media (max-width:800px)"]: {
+      // eslint-disable-line no-useless-computed-key
       maxWidth: 300,
       minWidth: 200,
-    }
+    },
   },
   productTitle: {
     alignItems: "flex-start",
@@ -110,17 +112,11 @@ function ProductDetail(props) {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${
-          currentCurrency === "SG"
-            ? SDG_CODE
-            : MYR_CODE
+          currentCurrency === "SG" ? SDG_CODE : MYR_CODE
         }`,
       },
     };
-    Axios.post(
-      `${baseURL}/api/v2/public/merchant/checkout/`,
-      payload,
-      headers
-    )
+    Axios.post(`${baseURL}/api/v2/public/merchant/checkout/`, payload, headers)
       .then((res) => {
         if (res.status === 200) {
           window.open(res.data.data.checkout_url, "_blank");

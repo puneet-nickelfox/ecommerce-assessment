@@ -8,11 +8,7 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles({
   root: {
     width: "100%",
-
   },
-  contentHeader:{
-
-  }
 });
 
 const Content = (props) => (

@@ -1,4 +1,4 @@
-import React, { Component, Suspense, useEffect, useState } from "react";
+import React, {Suspense,} from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import publicRoutes from "./publicRoutes";
 import AppContainer from "./AppContainer";
