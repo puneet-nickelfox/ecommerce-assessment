@@ -86,18 +86,14 @@ const useStyles = makeStyles({
 });
 
 function ProductDetail(props) {
-  console.log(baseURL,SDG_CODE,"ulrlrlll")
   const { productList, currentCurrency } = props;
   const classes = useStyles();
   const search = useLocation().search;
   const id = new URLSearchParams(search).get("id");
   const [finalObj, setFinalObj] = useState(null);
-
-  console.log(id);
   useEffect(() => {
-    console.log(productList, id, "lisstt");
     let obj = productList.filter((item) => item.id === parseInt(id));
-    console.log(obj);
+
     setFinalObj(obj);
   }, []);
 
@@ -127,7 +123,6 @@ function ProductDetail(props) {
     )
       .then((res) => {
         if (res.status === 200) {
-          console.log(res.data.data.checkout_url);
           window.open(res.data.data.checkout_url, "_blank");
         }
       })

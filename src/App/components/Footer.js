@@ -27,7 +27,6 @@ function Footer(props) {
   const classes = useStyles();
 
   const handleChange=(e)=>{
-    console.log(e.target.value)
     props.updateCurrency(e.target.value)
   }
   return (
