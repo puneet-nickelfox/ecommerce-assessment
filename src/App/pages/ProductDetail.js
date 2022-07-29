@@ -5,6 +5,11 @@ import ReactStars from "react-rating-stars-component";
 import { useLocation } from "react-router-dom";
 import Axios from "axios";
 
+const baseURL = process.env.REACT_APP_BASE_URL;
+const SDG_CODE = process.env.REACT_APP_SDG_CODE;
+const MYR_CODE = process.env.REACT_APP_MYR_CODE
+
+
 const useStyles = makeStyles({
   productPageContainer: {
     display: "flex",
@@ -81,6 +86,7 @@ const useStyles = makeStyles({
 });
 
 function ProductDetail(props) {
+  console.log(baseURL,SDG_CODE,"ulrlrlll")
   const { productList, currentCurrency } = props;
   const classes = useStyles();
   const search = useLocation().search;
@@ -109,13 +115,13 @@ function ProductDetail(props) {
         "Content-Type": "application/json",
         Authorization: `Bearer ${
           currentCurrency === "SG"
-            ? "cEYwXkM6upcfgbC7ZP8vA9ZOMbnAkk3T3pPjMYM5"
-            : "ClNI1Q9LujtJUlOqF8taVQyz1OHiewgkxa8cVZLt"
+            ? SDG_CODE
+            : MYR_CODE
         }`,
       },
     };
     Axios.post(
-      "https://api.uat.ablr.com/api/v2/public/merchant/checkout/",
+      `${baseURL}/api/v2/public/merchant/checkout/`,
       payload,
       headers
     )

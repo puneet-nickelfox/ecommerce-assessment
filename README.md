@@ -3,7 +3,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-# 
+# Instruction
+We have added baseurl and secret code for singapore and malaysian into env file
+so for run this code you need to create a env file with baseurl , SDG_CODE and , MYR_CODE
+Then just do npm install and then npm start
+
+
+
+# Stack uses
+We have used React, Redux for state management, Material UI , Javascript 
 
 ## Available Scripts
 
